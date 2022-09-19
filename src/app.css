@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--mustard: 234, 170, 0;
+		--black: 20, 23, 28;
+		--orange: 244, 114, 78;
+		--retro: 201, 199, 175;
+		background: var(--retro);
+	}
+}
+
+@layer components {
+	/* center vertically */
+	.center_v {
+		@apply m-auto
+        relative
+        top-[50%]
+        translate-y-[-50%];
+	}
+
+	.bold_text {
+		@apply font-fancy
+        text-center
+        text-[5vmin];
+	}
+
+	.center_flex {
+		@apply flex
+        justify-center
+        items-center;
+	}
+
+	.salient_text {
+		@apply text-center
+        text-[2vmin]
+        font-mono;
+	}
+
+	.bold_border {
+		@apply border-black
+        border-[1vmin];
+	}
+
+	.salient_border {
+		@apply border-black
+        border-[0.5vmin];
+	}
+
+	.player-container {
+		@apply /* adapt different sizes */
+        /* max-w-[80vw] */
+        w-[80vw]
+        /* 640px */
+        sm:max-w-[46vw]
+        landscape:sm:max-w-[38vw]
+        /* 768px */
+        md:max-w-[80vw]
+        landscape:md:max-w-[36vw]
+        /* 1024px */
+        lg:max-w-[42vw]
+        landscape:lg:max-w-[42vw]
+        /* 1280px */
+        xl:max-w-[40vw]
+        landscape:xl:max-w-[40vw]
+        /* 1536px */
+        2xl:max-w-[38vw]
+        landscape:2xl:max-w-[38vw]
+        aspect-square
+        bg-mustard
+        text-black
+        grid
+        grid-rows-player-layout;
+	}
+
+	.img-wrapper {
+		@apply h-full
+        w-full
+        bg-no-repeat
+        bg-center
+        bg-contain;
+	}
+
+	.player_buttons {
+		@apply /* flex */
+        flex
+        justify-center;
+	}
+
+	.player_button {
+		@apply bg-orange
+        m-[1vmin]
+        w-[8vmin]
+        h-[8vmin];
+	}
+
+	.button-icon {
+		@apply w-full
+        h-full
+        p-[0.5vmin];
+	}
+
+	.volume-slider {
+		@apply text-center
+        bg-transparent;
+	}
+
+	/* volume slider */
+	.slider {
+		@apply w-[10vmin]
+        h-[0.5vmin]
+        max-h-[0.5vmin]
+        bg-black
+        appearance-none;
+	}
+
+	.slider::-webkit-slider-thumb {
+		@apply appearance-none
+        w-[2vmin]
+        h-[2vmin]
+        rounded-none
+        border-none
+        bg-orange
+        text-black
+        cursor-pointer;
+	}
+
+	.slider::-moz-range-thumb {
+		@apply appearance-none
+        w-[1vmin]
+        h-[1vmin]
+        rounded-none
+        border-none
+        bg-orange
+        cursor-pointer;
+	}
+
+	.about {
+		@apply mx-auto
+        w-[40%]
+        text-xl
+        max-w-[600px]
+        text-black;
+	}
+
+	.about > h1 {
+		@apply font-fancy
+        text-5xl;
+	}
+
+	.about > p {
+		@apply p-4
+        font-mono;
+	}
+}
