@@ -8,7 +8,8 @@ const config = {
 	preprocess: preprocess(),
 	kit: {
 		adapter: adapter()
-	}
+	},
+	outDir: './.svelte-kit/cloudflare',
 };
 
 export default config;
